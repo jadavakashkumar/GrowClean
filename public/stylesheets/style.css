@@ -1,0 +1,17 @@
+body {
+  padding: 00px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+/* Google Map! */
+#map {
+    height: 645px;
+    width: 645px;
+}
+.carousel,.item,.active{height:100%;}
+.carousel-inner{height:100%;}

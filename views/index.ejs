@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%= title %></title>
+
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" type="text/css" href="/bower/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Custom CSS File -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrn605l7RPadiwdzsOlRw9O28lxfYBJ6s"></script>
+
+     <!-- Components Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="/bower/components-font-awesome/css/font-awesome.min.css">
+
+    <!-- Holder JS -->
+    <script type="text/javascript" src="/bower/holderjs/holder.js"></script>
+
+    <!-- Modernizr -->
+    <script src="/bower/modernizr/bin/modernizr"></script>
+
+    <!-- Angular File Test -->
+    <script type="text/javascript" src="/bower/angular/angular.min.js"></script>
+
+    <!-- Controller File GrowCleanController.js -->
+    <script type="text/javascript" src="javascripts/myAppController.js"></script> 
+
+    <script type="text/javascript" src="javascripts/addCtrl.js"></script> 
+   
+    <script type="text/javascript" src="javascripts/gservice.js"></script> 
+
+    <script type="text/javascript" src="javascripts/queryCtrl.js"></script> 
+
+    <!-- Angular Route for SPA -->
+    <script type="text/javascript" src="/bower/angular-route/angular-route.min.js"></script>
+
+    <!-- Angular Ui Bootstrap -->
+    <script type="text/javascript" src="/bower/angular-bootstrap/ui-bootstrap-tpls.min.js"></script> 
+
+    <!-- Angular Animate -->
+    <script type="text/javascript" src="/bower/angular-animate/angular-animate.min.js"></script>
+
+    <!-- Angular Touch -->
+    <script type="text/javascript" src="/bower/angular-touch/angular-touch.min.js"></script>
+
+    <!-- Angular Sanitize -->
+    <script type="text/javascript" src="/bower/angular-sanitize/angular-sanitize.min.js"></script>
+ 
+    <!-- Angular Resource -->
+    <script type="text/javascript" src="/bower/angular-resource/angular-resource.min.js"></script>
+
+    <!-- Angularjs Geolocation -->
+    <script src="/bower/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+
+  </head>
+  <body ng-app="GrowClean" >
+    !--  ****************************************************************************************************** -->
+   <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="authController" style="height:5%;">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/" style="font-size:225%;">GrowClean</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="ModalDemoCtrl as $ctrl">
+              <ul class="nav navbar-nav navbar-right">
+                
+
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" ng-hide="authenticated" ng-show="!authenticated"><span class="glyphicon glyphicon-edit"></span> Register<b class="caret"></b></a>
+
+                     <ul class="dropdown-menu" ng-hide="authenticated" style="padding: 15px;min-width: 250px;">
+                        <li>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <form class="form" role="form" method="post" ng-submit="register()" accept-charset="UTF-8" id="login-nav">
+                                    <p class="text-warning">{{error_message}}</p>
+                                    <div class="form-group">
+                                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                       <input type="email" ng-model="user.username" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                       <input type="password" ng-model="user.password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                    </div>
+                                    <div class="form-group">
+                                       <button type="submit" class="btn btn-success btn-block">Register</button>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </li>
+                    </ul>
+                    </li>
+
+
+
+
+                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" ng-hide="authenticated" ng-show="!authenticated"><span class="glyphicon glyphicon-log-in" ></span> Login <b class="caret"></b></a>
+
+                     <ul class="dropdown-menu" ng-hide="authenticated" style="padding: 15px;min-width: 250px;">
+                        <li>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <form class="form" role="form" method="post" ng-submit="login()" accept-charset="UTF-8" id="login-nav">
+                                 <p class="text-warning">{{error_message}}</p>
+                                    <div class="form-group">
+                                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                       <input type="email" ng-model="user.username" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                       <input type="password" ng-model="user.password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                    </div>
+                                    <div class="checkbox">
+                                       <label>
+                                       <input type="checkbox"> Remember me
+                                       </label>
+                                    </div>
+                                    <div class="form-group">
+                                       <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+                  
+                    <p class="navbar-right navbar-text" ng-show="authenticated" ><a href="#/" ng-click="signout()"><span class="glyphicon glyphicon-log-out" ></span> Logout</a></p>
+                    
+                    <p class="navbar-right navbar-text" ng-show="authenticated" ><a href="#/queryform" ><span class="glyphicon glyphicon-globe" ></span> Map Find </a></p>
+
+                    
+                    <p class="navbar-right navbar-text" ng-show="authenticated" ><a href="#/addform" ><span class="glyphicon glyphicon-map-marker" ></span> Tag A Place</a></p>
+
+                    <p class="navbar-right navbar-text" ng-show="authenticated" >Signed in as {{current_user}}</p>
+              
+                    </ul>
+                  
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <div class="row content" ng-show="authenticated" style="padding-top: 3%;padding-left: 9%;
+    padding-right: 11%;">
+        <div class="col-md-7">
+             <div id="map" style="width:645px; height:645px"></div>
+        </div>
+        <div ng-view>
+      
+      </div>
+    </div>
+
+
+
+
+
+
+  <!--  ****************************************************************************************************** -->
+    <!-- Carousel -->
+  <div ng-show="!authenticated" ng-hide="authenticated" ng-controller="CarouselController" id="slides_control" style="position:relative;width:100%;">
+    <div>
+      <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+        <img ng-src="{{slide.image}}" style="height:100vh;width:100%;">
+      </div>
+    </div>
+  </div>
+
+  <!--  ****************************************************************************************************** -->      
+    <!-- Content -->
+    <div ng-show="!authenticated" ng-hide="authenticated">
+      <div class="page-header" style="position:relative;">
+        <center><h1>Introduction</h1><br>
+        </center>
+      </div>
+      <div style="margin-left:10%;margin-right:10%;text-align:justify;">
+      <h4>
+      Cities of today’s world are facing major issue of waste generation and its disposal, also, the local authorities and administration are facing the biggest challenge in terms of maintaining cleanliness at public places. The bare fact remains that waste generation is a consistent process and the main problem for local authorities is how to vigil the waste spreaders and maintain the cleanliness at public places. With limited manpower and machinery in hand, the local authorities find it very difficult to identify and maintain the cleanliness in urban areas. Also, local citizens who pay taxes to local authorities to maintain their city, have no say in the administrative process, resulting in a big communication gap between local authorities and the citizens. Most of the times, in such scenario, citizen‟s health is also compromised in terms of vector borne diseases such as malaria, dengue etc., dust allergy, breathing problems for infants and elderly people. Unlike many other countries, Govt. of India has initiated “Swachh Bharat Abhiyan” (Clean India Mission) by 2019 through its citizens creating awareness among masses to maintain cleanliness. Therefore , this project is an initiative to empower the citizens through extensive utilization of Information Technology for attaining success in “Swachh Bharat Abhiyan” (Clean India Mission).
+      </h4>
+      </div>
+      </div>
+
+  <!--  ****************************************************************************************************** -->
+    <!-- About Us -->
+
+    <center ng-show="!authenticated" ng-hide="authenticated">
+      <div class="page-header" style="position:relative;">
+        <h1>About Us</h1><br><br>
+        <div class="row" style="width:60%;">
+                <div class="col-md-6">
+                    <img src="images/aboutus/1.jpg" class="img-responsive img-circle" alt="">
+                    <h4>Akash Kumar</h4>
+                    <p class="text-muted">Linux , C++ Developer<br>
+                      Email : jadavakashkumar@gmail.com
+                    </p>
+                </div>
+                <div class="col-md-6">    
+                      <img src="images/aboutus/2.jpg" class="img-responsive img-circle" alt="">
+                      <h4>Keshav Ramnani</h4>
+                      <p class="text-muted">Leading Developer
+                      <br> Email : keshavr.2572@gmail.com
+                      </p>
+                </div>
+        </div>
+    </center>
+
+
+
+  <!--  ****************************************************************************************************** -->
+    <!-- Footer -->
+      <footer ng-show="!authenticated" ng-hide="authenticated" style="position:relative;">
+        <center>
+          <span class="copyright">Copyright &copy; GrowClean 2016</span>
+        </center>
+        <br>
+        <br>
+      </footer>
+  <!--  ****************************************************************************************************** -->
+
+
+
+
+
+
+
+
+    <!-- JQUERY File necessary for Bootstrap -->
+    <script src="/bower/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap JS file -->
+    <script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+  </html>

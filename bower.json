@@ -1,0 +1,31 @@
+{
+  "name": "GrowClean",
+  "description": "This is a Project Created for seventh semester term end in LDRP-ITR",
+  "main": "app.js",
+  "authors": [
+    "Akash Kumar Jadav <jadavakashkumar@gmail.com>"
+  ],
+  "license": "AkashLicense",
+  "homepage": "/views/index.ejs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.8",
+    "bootstrap": "^3.3.7",
+    "components-font-awesome": "^4.6.3",
+    "angular-route": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-touch": "^1.5.8",
+    "angular-bootstrap": "^2.1.4",
+    "angular-sanitize": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angularjs-geolocation": "^0.1.1",
+    "modernizr": "^3.3.1",
+    "holderjs": "^2.9.4"
+  }
+}

@@ -14,7 +14,11 @@ var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 
 //connect to mongodb
+//if(process.env.DEV_ENV){
+//    mongoose.connect("mongodb://localhost:27017/GrowClean");
+//} else{
 mongoose.connect("mongodb://abcdefgh:eUQF1bwmnrgJJkzqzXy2@growclean-2012.mongo.dbs.appsdeck.eu:30862/growclean-2012");
+//}
   require('./models/models.js');
 
 var app = express();

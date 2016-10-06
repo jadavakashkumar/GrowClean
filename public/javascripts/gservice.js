@@ -14,9 +14,9 @@ angular.module('gservice', [])
         // Array of locations obtained from API calls
         var locations = [];
 
-        // Selected Location (initialize to center of America)
-        var selectedLat = 20.59;
-        var selectedLong = 78.96;
+        // Selected Location (initialize to center of Gujarat)
+        var selectedLat = 23.04;
+        var selectedLong = 72.66;
 
         // Functions
         // --------------------------------------------------------------
@@ -105,7 +105,7 @@ angular.module('gservice', [])
 
                 // Create a new map and place in the index.html page
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 6,
+                    zoom: 10,
                     center: myLatLng
                 });
             }

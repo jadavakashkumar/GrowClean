@@ -14,7 +14,7 @@ var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 
 //connect to mongodb
-mongoose.connect("mongodb://jadavakashkumar:akash@30@growclean-2012.mongo.dbs.appsdeck.eu:30862/growclean-2012");
+mongoose.connect("mongodb://<user>:<password>@growclean-2012.mongo.dbs.appsdeck.eu:30862/growclean-2012");
   require('./models/models.js');
 
 var app = express();
